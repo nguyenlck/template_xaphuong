@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+{% set i = 0 %}
+<div class="categories-view-content view-content-wrap layout-{{ gva_layout }}">
+  
+  {% if gva_layout == 'masonry' %}
+    <div class="post-masonry-style row">
+  {% endif %}  
+
+    {% for row in rows %}
+      
+      {% set i = i + 1 %}
+       {%
+         set row_classes = [
+           default_row_class ? 'item',
+           gva_item_class
+         ]
+       %}
+
+      {% if (gva_layout == 'grid' or gva_layout == 'small') and i % gva_columns  == 1 %} 
+        <div class="row">
+      {% endif %} 
+      
+        <div{{ row.attributes.addClass(row_classes) }}>
+          {{ row.content }}
+        </div>
+     
+      {% if (gva_layout == 'grid' or gva_layout == 'small') and ( i % gva_columns == 0 or i == rows|length ) %} 
+        </div>
+      {% endif %} 
+
+    {% endfor %}
+
+  {% if gva_layout == 'masonry' %}
+    </div>
+  {% endif %} 
+   
+</div>

@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Gavias's theme implementation to display a single Drupal page.
+ */
+#}
+<div class="body-page">
+	{% include directory ~ '/templates/page/parts/preloader.html.twig' %}
+   {% include directory ~ header_skin %}
+	
+   {% include directory ~ '/templates/page/parts/before-content.html.twig' %}
+
+	<div role="main" class="main main-page">	
+		<div id="content" class="content content-full">
+			<div class="container-full clearfix">	
+				{% include directory ~ '/templates/page/parts/main.html.twig' %}
+			</div>
+		</div>			
+	</div>
+
+	{% include directory ~ '/templates/page/parts/after-content.html.twig' %}
+
+	{% include directory ~ '/templates/page/parts/panel.html.twig' %}
+
+	{% include directory ~ '/templates/page/footer.html.twig' %}
+	
+</div>
+

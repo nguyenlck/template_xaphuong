@@ -1,0 +1,45 @@
+name: Gavias Vinor Magazine
+type: theme
+description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+base theme: false
+libraries:
+  - gavias_vinor/global-styling
+  - core/jquery
+
+regions:
+  offcanvas: 'After Offcanvas Mobile'
+  topbar: 'Topbar'
+  branding: 'Branding'
+  search: 'Search'
+  account: 'Account'
+  header_right: 'Header Right'
+  breaking_news: 'Breaking News'
+  breadcrumbs: 'Breadcrumbs'
+  help: 'Help'
+  main_menu: 'Main menu'
+  menu_another: 'Menu another'
+  promotion: 'Promotion'
+  before_content: 'Before Content'
+  content_top: 'Content Top'
+  content: 'Main content'
+  content_bottom: 'Content Bottom'
+  sidebar_left: 'Sidebar Left'
+  sidebar_right: 'Sidebar Right'
+  after_content: 'After Content'
+  highlighted: 'Highlighted'
+  before_footer: 'Before Footer'
+  panel_first: 'Panel Fisrt'
+  panel_second: 'Panel Second'
+  footer_first: 'Footer Fisrt'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer Third'
+  footer_four: 'Footer Four'
+  after_footer: 'After Footer'
+  copyright: 'Copyright'
+  related_content: 'Related Content (using for article page)'
+  user_content: 'User Content (using for user page)'
+  other: 'Other'
+
+version: '2.0.1'
+core_version_requirement: ^8.8 || ^9
+project: 'drupal'

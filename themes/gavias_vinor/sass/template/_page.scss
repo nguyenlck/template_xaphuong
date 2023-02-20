@@ -1,0 +1,224 @@
+.contact-message-form{
+   .form-item{
+      margin-bottom: 30px;
+      label{
+         font-size: 12px;
+         display: block;
+         text-transform: uppercase;
+      }
+      input, textarea{
+         width: 100%;
+      }
+   }
+   .form-actions{
+      #edit-preview, #edit-submit{
+         background: $theme-color;
+         color: $white;
+         font-size: 12px;
+         text-transform: uppercase;
+         padding: 10px 15px;
+         border: none;
+         &:hover{
+           background: lighten($theme-color, 10%); 
+         }
+      }
+   }
+}
+
+
+/* ----- Maintenance page ----- */
+body.maintenance-page {
+  background-color: #fff;
+  color: #000;
+}
+.maintenance-page #page-wrapper {
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #ddd;
+  margin-top: 40px;
+}
+.maintenance-page #page {
+  margin: 10px;
+}
+.maintenance-page #main-wrapper {
+  min-height: inherit;
+}
+.maintenance-page #header {
+  width: auto;
+}
+.maintenance-page #main {
+  margin: 0;
+}
+.maintenance-page .content .section {
+  padding: 0 0 0 10px; /* LTR */
+}
+[dir="rtl"] .maintenance-page .content .section {
+  padding-left: 0;
+  padding-right: 10px;
+}
+.maintenance-page #header {
+  background-color: #fff;
+  background-image: none;
+}
+.maintenance-page .site-branding-text {
+  margin-bottom: 50px;
+  margin-left: 0; /* LTR */
+  padding-top: 20px;
+  font-size: 90%;
+}
+[dir="rtl"] .maintenance-page .site-branding-text {
+  margin-right: 0;
+}
+.maintenance-page .site-branding-text,
+.maintenance-page .site-branding-text a,
+.maintenance-page .site-branding-text a:hover,
+.maintenance-page .site-branding-text a:focus {
+  color: #777;
+}
+.maintenance-page  .page-title {
+  line-height: 1em;
+  margin-top: 0;
+}
+@media all and (min-width: 800px) {
+  .maintenance-page #page-wrapper {
+    width: 800px;
+  }
+  .maintenance-page #header div.section,
+  .maintenance-page #main {
+    width: 700px;
+  }
+}
+@media all and (min-width: 600px) { /* @TODO find the proper breakpoint */
+  .maintenance-page #page {
+    margin: 20px 40px 40px;
+  }
+}
+
+.search-page-form{
+  #edit-keys{
+    @include box-shadow(none);
+    border: 1px solid $border-color;
+    height: 35px;
+    padding: 0 8px;
+  }
+  .form-item{
+    margin-bottom: 15px;
+    label{
+      width: 35%;
+    }
+  }
+}
+
+ol.search-results{
+  margin: 20px 0;
+  padding: 0;
+  > li{
+    list-style-type: none;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid $border-color;
+    p strong{
+      color: $theme-color;
+    }
+  }
+}
+
+.page-background{
+  background: url('#{$base-theme-image-path}/bg-home-3.jpg') no-repeat top center transparent;
+  .bg-main-page-content{
+    padding-top: 65px;
+    max-width: 1300px;
+    margin: 0 auto;
+    background: $white;
+  }
+}
+
+.user-profile{
+  font-size: 14px;
+  line-height: 28px;
+  margin-bottom: 30px;
+  .user-fullname{
+    font-size: 22px;
+    font-weight: 700;
+    color: $black;
+    margin-top: 15px;
+    text-transform: uppercase;
+  }
+  .user-position{
+    color: #999999;
+    margin: 5px 0 10px;
+  }
+  .form-item{
+    margin-bottom: 10px!important;
+  }
+  .label{
+    padding: 0!important;
+    margin: 0!important;
+  }
+}
+
+
+.page-notfound{
+  text-align: center;
+  padding: 150px 0 100px;
+  @media(max-width: $screen-sm-max){
+    padding: 30px 0;
+  }
+  .text-large{
+      font-size: 36px;
+      font-weight: 700;
+      color: $black;
+      line-height: 1;
+      @media(max-width: $screen-sm-max){
+        font-size: 20px;
+      }
+  }
+  .sub-title{
+    color: #999999;
+    padding: 30px 0;
+  }
+  .content{
+    color: #999999;
+    font-size: 18px;
+    margin: 0 auto;
+    line-height: 36px; 
+  }
+  .action{
+    text-align: center;
+    margin-top: 20px;
+    a{
+      font-size: 12px;
+      color: $white;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: $black;
+      padding: 8px 15px;
+      &:hover{
+        color: $white;
+        background: $theme-color;
+      }
+    }
+  }
+}
+
+
+.article-detail{
+  .post-thumbnail.post-gallery .owl-item .item{
+    position: relative;
+  }
+  .post-thumbnail.post-gallery .owl-item .item .caption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    z-index: 11;
+    font-size: 16px;
+  }
+}

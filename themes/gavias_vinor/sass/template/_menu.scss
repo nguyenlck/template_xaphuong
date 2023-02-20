@@ -1,0 +1,306 @@
+.area-main-menu{
+	.menu-toggle{
+		display: none;
+	}
+}
+@media(min-width: $screen-sm-max){
+   .menu-hover{
+   	.navigation {
+   		position: relative;
+   		clear: both;
+   		ul {
+   			list-style: none;
+   			padding: 0;
+   			margin: 0;
+   		}
+   		.gva_menu {
+   			width: 100%;
+   			position: relative;
+   			font-size: 0;
+   			li {
+   				position: relative;
+   				font-size: 13px;
+   				a{
+   					text-align: left!important;
+   					.icaret{
+   						margin-left: 2px;
+   						border: none!important;
+   					}
+   				}
+   			}
+   			> li {
+   				display: inline-block;
+   				 &.gva-mega-menu{
+   				 	position: static!important;
+   				 	> .sub-menu{
+   				 		width: 100%;
+   				 	}
+   				 }
+   				&:hover {
+   					> ul.sub-menu, div.sub-menu {
+   						display: block;
+   						visibility: visible;
+   						@include opacity(1);
+   						@include scale(1);
+   					}
+   					> a:after {
+   						visibility: visible;
+   						@include opacity(1);
+   					}
+   				}	
+   				> a {
+   					display: block;
+   					position: relative;
+   					font-size: 13px; 
+   					font-weight: 700;
+   					letter-spacing: 0.5px;
+   					text-transform: uppercase;
+   					padding: 18px 15px;
+   					@include transition(all 0.35s);
+   					text-align: center;
+                  @media(max-width: $screen-md-max){
+                     padding-left: 15px;
+                     padding-right: 15px;
+                  }
+   					&:hover{
+   						color: $theme-color;
+   					}
+   					&.is-active{
+   						color: $theme-color;	
+   					}
+   				} 
+   				&.megamenu{
+   					&.menu-columns-2{
+   						> ul.sub-menu{
+   							> li{
+   								width: 50%;
+   								float: left;
+   							}
+   						}
+   					}
+   					&.menu-columns-3{
+   						> ul.sub-menu{
+   							> li{
+   								width: 33.33%;
+   								float: left;
+   							}
+   						}
+   					}
+   					&.menu-columns-4{
+   						> ul.sub-menu{
+   							> li{
+   								width: 25%;
+   								float: left;
+   							}
+   						}
+   					}
+   					&.menu-columns-5{
+   						> ul.sub-menu{
+   							> li{
+   								width: 20%;
+   								float: left;
+   							}
+   						}
+   					}
+   				} 
+   				&.menu-list{
+   					ul.sub-menu{
+   						min-width: 250px;
+   					 	> li{
+   							border-bottom: 1px solid $border-color;
+   							> a{
+   								padding: 10px 15px;
+   								text-transform: uppercase;
+   							}
+   						}	
+   					}
+   				}
+   			}
+   			.megamenu {
+   				position: static;
+   				>.sub-menu {
+   					width: 100%;
+   					padding: 20px;
+   					> li {
+   						padding: 0 15px;
+   						position: static;
+   						> ul.sub-menu {
+   							@media(min-width:$screen-sm-max){
+   								display: block!important;
+   							}
+   							visibility: visible;
+   							position: static;
+   							border-width: 0;
+   							padding: 0;
+   							min-width: inherit;
+   							width: 100%;
+   							background-color: transparent;
+   							@include opacity(1);
+   							@include box-shadow(none);
+   							li a {
+   								padding: 0;
+   								font-size: 14px;
+   								margin-bottom: 5px;
+   							}
+   						}
+   						> a {
+   							display: block;
+   							font-size: 15px;
+   							text-transform: uppercase;
+   							padding: 0 0 5px 0;
+   							margin-bottom: 10px;
+   							border-bottom: 1px solid $border-color;
+   							&:before {
+   								content: none;
+   							}
+   							&:hover {
+   								text-indent: 0;
+   							}
+   						}
+   						&:hover ul {
+   							transform: translate(0, 0);
+   						}
+   					}
+   				}
+   			}
+   			.sub-menu {
+   				@include scale(0);
+   	        	@include opacity(0);
+   				position: absolute;
+   				min-width: 230px;
+   				background-color: $white;
+   				z-index: 999;
+   				left: 0;
+   				visibility: hidden;
+   				@include opacity(0);
+   				@include transition(all 0.2s ease-out);
+   				@include box-shadow(0px 4px 4px 1px rgba(0, 0, 0, 0.2));
+   				padding: 10px 30px;
+   				li {
+   					margin-bottom: 6px;
+   					padding-bottom: 10px;
+   					border-bottom: 1px solid $border-color;
+   					&:last-child{
+   						border: none;
+   						margin-bottom: 0;
+   					}
+   					a {
+   						display: block;
+   						padding-left: 0;
+   						padding-right: 20px;
+   						line-height: 25px;
+   						text-decoration: none;
+   						color: #666666;
+   						font-size: 13px;
+   						text-transform: none;
+   						@include transition(all 0.2s ease-out);
+   						&:after, &:before{
+   							display: none;
+   						}
+   						&:hover, &:focus, &:active {
+   							color: $black;
+   						}
+   					}
+   					ul {
+   						position: absolute;   
+   						top: 0;
+   						right: 0;
+   						min-width: 250px;
+   						background-color: $white;
+   						visibility: hidden;
+   						@include opacity(0);
+   						display: none;
+   						z-index: 11;
+   					}
+   					&:hover > ul {
+   						@media(min-width: $screen-sm-max){
+   							visibility: visible;
+   							@include opacity(1);
+   							@include scale(1);
+   							display: block;
+   							left: 100%;
+   						}
+   					}
+   				}
+   			}	
+   		}
+   	}
+   }
+}	
+
+.mega-menu-block{
+	.sub-menu{
+		padding: 30px!important;
+	}
+	.post-title{
+		margin-top: 15px;
+	}
+}
+
+//Widget inner megamenu
+.gva-mega-menu{
+  .post-block{
+    .post-title a{
+      font-size: 14px;
+    }
+  }
+	.block-blocktabs{
+    position: relative;
+    overflow: hidden!important;
+    .ui-widget{
+      font-size: $font-size-base;
+    }
+    .ui-tabs-nav{
+      padding: 0;
+      position: relative;
+      top: 0;
+      width: 23%;
+      float: left;
+      margin-right: 2%;
+      padding: 30px;
+      background: #F6F6F6!important;
+      &:after{
+      	content: "";
+      	@include size(100%, 500px);
+      	background: #F6F6F6!important;
+      	position: absolute;
+      	top: 0;
+      	left: 0;
+      	z-index: 1;
+      }
+      > li{
+        background: none;
+        padding: 0!important;
+        margin: 0!important;
+        position: relative;
+        z-index: 11;
+        width: 100%;
+        float: none;
+        clear: both;
+        border: none!important;
+        @include clearfix();
+        > a{
+         font-size: 13px;
+         text-transform: uppercase!important;
+         font-weight: 700;
+         padding-bottom: 10px;
+        	width: 100%;
+        }
+        &:last-child{
+          > a{
+            padding-right: 0;
+          }
+        }
+        &.ui-tabs-active{
+           > a{
+            color: $black;
+           }
+        }
+      }
+    }
+    .ui-tabs-panel{
+    	float: left;
+    	width: 75%;
+    }
+  }
+}

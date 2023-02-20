@@ -1,0 +1,29 @@
+div {
+  &.messages {
+    margin: 10px 0;
+    code {
+      font-weight: 700;
+    }
+  }
+  &.help {
+    p:last-child {
+      margin-bottom: 0;
+    }
+    ul:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &#acquia-agent-no-search {
+    margin: 8px 0;
+    padding-left: 3em !important;
+  }
+}
+#block-system-help {
+  background: url(images/help.png) no-repeat 17px 22px transparent;
+  border: none;
+  margin: 6px 0;
+  padding: 10px 10px 10px 50px;
+  code {
+    font-weight: 700;
+  }
+}

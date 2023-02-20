@@ -1,0 +1,245 @@
+body{
+  overflow-x: hidden;
+}
+
+a{
+  &:hover, &:focus, &:active{
+    @include transition(all 0.35s);
+    outline: none!important;
+  } 
+}
+// images, video
+//---------------------------------
+img{
+    border: 0;
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+
+.video-responsive {
+   height        : 0;
+   padding-top   : 0;
+   padding-bottom: 56.25%;
+   position      : relative;
+   overflow      : hidden;
+   embed,iframe,object,video{
+      top     : 0;
+      left    : 0;
+      width   : 100%;
+      height  : 100%;
+      position: absolute;
+   }
+}
+
+.body-page{
+  input[type="text"], 
+  input[type="tel"],
+  input[type="password"],
+  input[type="email"],
+  textarea, select{
+    background-color: #fff;
+    @include box-shadow(0 0 2px 2px rgba(0, 0, 0, 0.02) inset);
+    border: 1px solid $border-color;
+    padding: 5px 10px;
+    &:focus, &:active, &:hover{
+      outline: none;
+    }
+  } 
+}
+
+input, textarea, select{
+  &:focus, &:active, &:hover{
+    outline: none;
+  }
+}
+
+.label{
+  color: #000!important;
+}
+
+.list-menu ul li{
+  list-style: none;
+  padding: 15px 2px;
+  font-size: $font-size-base;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   &:last-child{
+      border-bottom: none;
+    }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0!important;
+  ul{
+    padding-left: 20px;
+  }
+  li{
+    i{
+      margin-right: 3px;
+      font-size: 16px;
+      min-width: 20px;
+      text-align: center;
+    }
+  } 
+}
+
+.item-list{
+  ul li{
+    margin-left: 0;
+  }
+}
+
+ul.menu{
+  > li{
+    position: relative;
+    padding: 3px 0;
+    a{
+      padding-left: 16px;
+      @include transition(all 0.35s);
+      &:after{
+        content: "\f105";
+        font-family: 'FontAwesome';
+        position: absolute;
+        color: #878787;
+        left: 0;
+        top: 50%;
+        margin-top: -12px;
+      }
+      &:hover{
+        padding-left: 25px;
+      }
+    }
+  }
+}
+
+ul.links.inline{
+  list-style: none;
+  li{
+    list-style-type: none;
+  }
+}
+
+table {
+  width: 100%;
+  margin-bottom: $line-height-computed;
+  border: 1px solid $table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-color: $table-border-color;
+        border-width: 1px 1px 1px 0;
+        border-style: solid;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+.no-padding{
+  padding: 0!important;
+}
+
+a.disable{
+  pointer-events: none;
+  cursor: default;
+}
+
+.links-inline{
+  a{
+    font-size: 12px;
+    font-weight: 700;
+    color: #999999;
+    @include transition(all 0.35s);
+    margin-right: 30px;
+    text-transform: uppercase;
+    &:last-child{
+      margin-right: 0;
+    }
+    &:hover, &:active, &:focus{
+      color: $white!important;
+    }
+  }
+}
+
+/************************* Pagination ************************/
+.pager .paginations{
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 30px;
+  padding: 4px 3px;
+  a {
+    border: 1px solid $border-color;
+    font-weight: 700;
+    display: inline-block;
+    height: 35px;
+    line-height: 34px;
+    margin: 0 1px;
+    text-align: center;
+    width: 35px;
+    margin-right: 10px;
+    &:last-child{
+      margin-right: 0;
+    }
+    &.active{
+      background: $theme-color;
+      border-color: $theme-color;
+      color: $white;
+    }
+  }
+}
+
+#edit-preview, #edit-submit, .button--primary{
+  background: $theme-color;
+  color: $white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border: none;
+  &:hover{
+    background: lighten($theme-color, 10%); 
+  }
+}
+
+
+.breadcrumb-content-inner{
+  margin-bottom: 30px; 
+  .gva-block-breadcrumb{
+    .breadcrumb-style{ 
+      @include box-shadow(0 6px 15px -6px rgba(0, 0, 0, 0.1) inset);
+      padding: 25px 0;
+      position: relative;
+      .page-title{
+       display: none;
+      }
+    }  
+    &.text-white, &.text-light{
+      *{
+        color: #bbbbbb;
+      } 
+    }
+  } 
+  nav.breadcrumb{
+    li{
+      font-size: 12px!important;
+      font-weight: 600;
+      color: $black;
+      a{
+        color: #bbbbbb;
+        &:hover{
+          color: $black;
+        }
+      }
+    }
+  }  
+}  

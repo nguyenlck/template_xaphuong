@@ -1,0 +1,19 @@
+{% if page.highlighted %}
+  <div class="highlighted area">
+    <div class="container">
+      <div class="content-inner">
+        {{ page.highlighted }}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% if page.after_content %}
+  <div class="area after_content">
+    <div class="container-fw">
+        <div class="content-inner">
+         {{ page.after_content }}
+        </div>
+      </div>
+  </div>
+{% endif %}

@@ -1,0 +1,66 @@
+<header id="header" class="header-v3">
+  
+  {% include directory ~ '/templates/page/parts/topbar.html.twig' %}
+
+    <div class="header-bottom {{sticky_menu}}">
+      <div class="main-menu">
+        <div class="container">
+           <div class="row">
+              <div class="col-xs-2">
+                {% if page.branding %}
+                  {{ page.branding }}
+                {% endif %}    
+              </div>
+              <div class="col-xs-10 area-main-menu">
+                <div class="area-inner menu-hover">
+                  <div class="gva-offcanvas-inner">
+                    <div class="close-offcanvas hidden-lg hidden-md"><a><i class="fa fa-times"></i></a></div>
+                    {% if page.main_menu %}
+                      {{ page.main_menu }}
+                    {% endif %}  
+                    {% if page.offcanvas %}
+                      <div class="after-offcanvas hidden-lg hidden-md">
+                        {{ page.offcanvas }}
+                      </div>
+                   {% endif %}
+                  </div>
+                  
+                  <div id="menu-bar" class="menu-bar mobile hidden-lg hidden-md">
+                    <span class="one"></span>
+                    <span class="two"></span>
+                    <span class="three"></span>
+                  </div>
+
+                  {% if page.menu_another %}
+                    <div class="menu-another hidden-xs hidden-sm">
+                      <div id="menu-bar-another" class="menu-bar">
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                      </div>
+                      <div class="content-inner">
+                        {{ page.menu_another }}
+                      </div>
+                    </div>  
+                  {% endif %}
+
+                  {% if page.search %}
+                    <div class="gva-search-region search-region">
+                      <span class="icon"><i class="fa fa-search"></i></span>
+                      <div class="search-content">
+                        <a class="close"><i class="fa fa-times"></i></a> 
+                        <div class="content-inner"> 
+                          {{ page.search }}
+                        </div>
+                      </div>  
+                    </div>
+                 {% endif %}
+                  
+                </div>   
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+   
+</header>

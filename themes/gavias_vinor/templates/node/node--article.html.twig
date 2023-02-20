@@ -1,0 +1,118 @@
+{%
+  set classes = [
+    'node',
+    'node-detail',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<!-- Start Display article for teaser page -->
+{% if teaser == true %} 
+  <article{{ attributes.addClass(classes) }}>
+    <div class="post-block display-term">
+      
+      <div class="post-thumbnail post-{{ post_format }}">
+        {% if post_format == 'video' or post_format == 'audio' and gva_iframe %}
+          {{ gva_iframe|raw }}
+        {% elseif post_format == 'gallery' and content.field_post_gallery %}
+          {{ content.field_post_gallery }}
+        {% else %}
+          {{ content.field_image }}
+        {% endif %} 
+      </div>
+
+      <div class="post-content">
+        {{ title_prefix }}
+           <h3{{ title_attributes.addClass('post-title') }}><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>
+        {{ title_suffix }}         
+        <div class="post-meta">
+          <span class="post-created"> {{ date }} </span> 
+          <span class="space">-</span>
+          <span class="post-comment"> {{ comment_count }} </span>
+        </div>
+        <div class="post-body">
+          {{ content.body }}
+        </div>
+        <div class="post-link hidden">
+          <a href="{{url}}">Read more</a>
+        </div>
+      </div>
+
+    </div>
+  </article>  
+
+<!-- End Display article for teaser page -->
+{% else %}
+<!-- Start Display article for detail page -->
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="post-block article-detail">
+      
+    <div class="post-thumbnail post-{{ post_format }}">
+      {% if post_format == 'video' or post_format == 'audio' and gva_iframe %}
+        {{ gva_iframe|raw }}
+      {% elseif post_format == 'gallery' and content.field_post_gallery %}
+        {{ content.field_post_gallery }}
+      {% else %}
+        {{ content.field_image }}
+      {% endif %}  
+    </div>
+
+    <div class="post-content">
+      <div>{{ content.field_post_category }}</div>
+      {{ title_prefix }}
+         <h1{{ title_attributes.addClass('post-title') }}>{{ label }}</h1>
+      {{ title_suffix }}         
+      <div class="post-meta margin-bottom-10">
+          <span class="post-created"> {{ date }} </span> 
+          <span class="space">-</span>
+          <span class="post-comment"> {{ comment_count }} </span>
+          <span{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }}{% endtrans %}
+          </span>
+        </div>
+      
+      {% if display_submitted %}
+        <div class="node__meta hidden">
+          {{ author_picture }}
+          <span{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </span>
+          {{ metadata }}
+        </div>
+      {% endif %}
+
+      <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+        {{ content|without('field_image', 'field_post_category', 'field_tags', 'field_post_format', 'field_post_type', 'field_post_embed', 'field_post_gallery','field_taxonomy_color' ,'comment', 'links') }}
+      </div>
+
+      <div class="post-tags clearfix">
+        {{ content.field_tags }}
+      </div>  
+
+      <div class="related-posts margin-top-30">
+        {{ related_content }}
+      </div>
+
+      {% if content.comment %}
+        <div id="node-single-comment">
+          {% if comment_count > 0 %} 
+            <div class="comment-count"><span>{{ comment_count }} Comments </span></div>
+          {% endif %}  
+          {{ content.comment }}
+        </div>
+      {% endif %}  
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- End Display article for detail page -->
+{% endif %}

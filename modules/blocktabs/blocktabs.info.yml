@@ -1,0 +1,14 @@
+name: 'Block Tabs'
+type: module
+description: 'Block Tabs.'
+core_version_requirement: ^8 || ^9
+# configure: blocktabs.config
+
+dependencies:
+      - jquery_ui_accordion:jquery_ui_accordion
+      - jquery_ui_tabs:jquery_ui_tabs
+
+# Information added by Drupal.org packaging script on 2020-10-03
+version: '8.x-1.0-beta4'
+project: 'blocktabs'
+datestamp: 1601724931

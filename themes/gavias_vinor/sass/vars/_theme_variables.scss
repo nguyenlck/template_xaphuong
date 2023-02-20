@@ -1,0 +1,34 @@
+@import 'vars/_variables';
+
+// images folder path of theme 
+$base-theme-image-path : '../images'!default;
+
+//------- FONTS
+$fa-font-path							: "../fonts/" !default;
+$theme-font-path                 : "../fonts/" !default;
+$font-icon 								: "FontAwesome"!default;
+$font-second                     : "Roboto",serif !default;
+//-------- COLOR --------------
+$black 			 					   : #000 !default; 
+$white                           : #fff !default;
+$nocolor                         : transparent !default;
+//--------- COLORS
+$theme-color							 : #238CC8 !default; 
+$theme-color-rgba                 : rgba(248, 194, 0, 0.7) !default;
+$theme-color-second               : #444444 !default;
+$border-color-dark                : rgba(255, 255, 255, 0.1)!default;
+$border-color                     : rgba(0, 0, 0, 0.1)!default; 
+
+$color-red        : #D03632!default;
+$color-pink       : #FF69B4!default;
+$color-light-pink : #AC70B8!default;
+$color-orange     : #ED695C!default;
+$color-yellow     : #F4EC4D!default;
+$color-green      : #64C568!default;
+$color-blue       : #26B2EC!default;
+$color-dark-mint  : #90D0C4!default;
+$color-violet     : #F8C200!default;
+$color-navy       : #23569C!default;
+$color-gray       : #BFC0BC!default;
+$color-black      : #071F20!default;
+ 

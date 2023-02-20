@@ -1,0 +1,1133 @@
+.item-list{
+  ul{
+    overflow: hidden;
+    li.view-list-item{
+      list-style-type: none;
+      margin:0 0 30px;
+      overflow: hidden;
+      .post-block{
+        margin: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.views-view-grid{
+  .views-row{
+    width: auto;
+    clear: none;
+    float: none!important;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .post-block{
+    .post-title{
+      padding-top: 10px;
+    }
+  }
+}
+
+.list-border-bottom{
+  .view-content-wrap{
+    .item{
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px dotted $border-color;
+      &:last-child{
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.ajax-progress.ajax-progress-fullscreen{
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  &:after{
+    content: "";
+    top: 50%;
+    left: 50%;
+    @include size(64px, 64px);
+    margin-top: -32px;
+    margin-left: -32px;
+    @include border-radius(50%);
+    background: url('#{$base-theme-image-path}/preloader/preloader-10.gif') repeat-x center center $nocolor;
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.view-article-category-block{
+  position: relative;
+  .js-pager__items{
+    width: 35px;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    z-index: 11;
+    > li{
+      @include size(15px, 20px);
+      float: left;
+      margin-right: 5px;
+      > *{
+        color: #999999;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  .post-category{
+    background: none;
+    display: block;
+    position: relative;
+    margin: 0 0 35px;
+    padding: 0 0 0;
+    padding-right: 15px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.05);
+    > span{
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      position: relative;
+      letter-spacing: 0.5px;
+      color: $black;
+      padding: 0 0 13px;
+      z-index: 9;
+      &:before{
+        content: "";
+        position: absolute;
+        @include size(100%, 5px);
+        background: $black;
+        left: 0;
+        bottom: -5px;  
+        z-index: 1;
+      }
+    }
+  }  
+}
+
+.js-pager__items{
+  margin-bottom: 30px!important;
+  margin-top: 10px!important;
+  a.button{
+    @include border-radius(30px);
+    @include transition(all 0.35s);
+    background: $theme-color;
+    color: $white;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    font-weight: 700;
+    &:hover, &:focus, &:active{
+      background: $theme-color;
+      color: $white;
+      @include opacity(0.8);
+    }
+  }      
+}
+
+.slider-hero{
+  .init-carousel-owl{
+    margin: 0;
+    margin-left: -5px;
+    margin-right: -5px;
+    .owl-item > .item{
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+  .post-block{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    @include transition(all 0.35s);
+    &:after{
+      content: "";
+      position: absolute;
+      @include size(100%, 100%);
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9;
+      left: 0; top: 0;
+    }
+    .post-content{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99;
+      padding: 20px;
+    }
+    .post-title{
+      @include clearfix();
+      margin: 0;
+      float: left;
+      width: 100%;
+      padding-bottom: 0;
+      a{
+        font-size: 16px;
+        color: $white;
+        font-weight: 500;
+        @media(max-width: $screen-sm-max){
+          font-size: 15px;
+        }
+        &:hover{
+          color: $theme-color;
+        }
+      }  
+    }
+    .post-meta{
+      padding: 3px 0 0;
+      margin-bottom: 0;
+      color: $white;
+      width: 100%;
+      float: left;
+      a{
+        color: $white;
+      }
+    }
+    .post-categories{
+      margin-bottom: 5px;
+      a{
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $white;
+      }
+    }
+    &:hover{
+      &:after{
+        @include opacity(0.6);
+      }
+    }
+  }
+}
+
+//---------------- Video featured ------------------------------
+.view-featured-videos{
+  &.init-carousel-owl{
+    margin-left: -1px;
+    margin-right: -1px;
+    width: auto;
+    .owl-item > .item{
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+  }
+  .large-video{
+    .video-block{
+      min-height: 420px;
+    }  
+  }
+  .small-videos > .item-video{
+    margin-bottom: 2px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .video-block{
+      min-height: 209px;
+    }
+  }
+  .video-block{
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      background: rgba(0, 0, 0, 0.6);
+      @include size(100%, 100%);
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+    .video-thumbnail{
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      z-index: 1;
+      background-size: cover;
+    }
+    .video-content{
+      position: absolute;
+      z-index: 9;
+      @include size(100%, auto);
+      @include translateY(-50%);
+      top: 50%;
+      left: 0;
+      z-index: 99;
+      padding: 15px 20px;
+      text-align: center;
+      .video-title a{
+        color: $white;
+        font-size: 16px;
+        line-height: 1.3;
+        font-weight: 600;
+        display: block;
+        text-transform: uppercase;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+      .icon a{
+        margin-bottom: 15px;
+        display: inline-block;
+        @include size(40px, 40px);
+        border: 2px solid $white;
+        color: $white;
+        font-size: 18px;
+        line-height: 38px;
+        text-align: center;
+        @include border-radius(50%);
+        position: relative;
+        text-indent: 9999px;
+        @include transition(all 0.35s);
+        &:hover{
+          color: $theme-color;
+          border-color: $theme-color;
+          @include scale(1.2);
+        }
+        &:after{
+          text-indent: 1px;
+          content: "\f04b";
+          font-family: "FontAwesome";
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .first-video{
+    iframe{
+      width: 100%;
+      min-height: 500px;
+    }
+  }
+  &.v2{
+    .video-block{
+      .video-thumbnail{
+        position: relative;
+      }
+    }
+  }
+}
+
+
+//============ Block Category 2Columns ==========================
+.category-2columns{
+  .row-second{
+    margin-bottom: 20px;
+    .post-block{
+      .post-image{
+        @include size(100px, auto);
+        float: left;
+        margin-bottom: 0;
+      }
+      .post-meta{
+        margin-bottom: 0;
+      }
+      .post-content{
+        display: block;
+        padding-left: 115px;
+      }
+      .post-title{
+        padding-top: 0;
+        margin-top: -3px;
+        padding-bottom: 5px;
+        a{
+          display: block;
+          font-size: 15px;
+        }
+      }
+      .post-body{
+        display: none;
+      }
+    }
+  }
+  .row-first{
+    margin-bottom: 30px;
+    .post-title{
+      margin-top: 15px;
+    }
+  }
+}
+
+//==================== Display post list =========================
+.posts-list{
+  .item-list ul > li{
+    margin: 0 0 20px;
+  }
+  .post-block{
+    .post-image{
+      @include size(95px, auto);
+      float: left;
+      margin-bottom: 0;
+    }
+    .post-meta{
+      margin-bottom: 0;
+    }
+    .post-content{
+      display: block;
+      padding-left: 110px;
+    }
+    .post-title{
+      max-height: 48px;
+      overflow: hidden;
+      a{
+
+        display: block;
+      }
+    }
+    .post-body{
+      display: none;
+    }
+  }
+}
+
+.posts-list-large{
+  .post-block{
+    .post-image{
+      @include size(40%, auto);
+      float: left;
+      margin-bottom: 0;
+      position: relative;
+      @media(max-width: $screen-xs-max){
+        width: 100%;
+      }
+      .post-categories{
+        position: absolute;
+        top: 20px;
+        left: 0;
+        z-index: 11;
+        padding: 5px 20px;
+        text-align: center;
+        margin-bottom: 0;
+        @include opacity(0.8);
+        a{
+          font-weight: 800;
+          font-size: 12px;
+          color: $white;
+        }
+      }
+    }
+    .post-content{
+      display: block;
+      width: 60%;
+      float: left;
+      padding-left: 25px;
+      @media(max-width: $screen-xs-max){
+        width: 100%;
+        padding: 20px 0;
+      }
+    }
+    .post-meta{
+      margin-bottom: 0;
+    }
+  }
+}
+
+//-------------------------------------------------------------------
+.posts-list-number{
+  .item-list ul > li{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-color;
+  }
+  .post-block{
+    position: relative;
+    min-height: 40px;
+    .number{
+      font-size: 20px;
+      background: $theme-color;
+      @include border-radius(3px);
+      color: $white;
+      text-align: center;
+      @include size(40px, 40px);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 11;
+      margin-top: -20px;
+      font-style: italic;
+      line-height: 40px;
+    }
+    .post-title{
+      padding: 0;
+      padding-left: 50px;
+      a{
+        display: block;
+        font-size: 13px;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+    }
+  }
+}
+
+//==================== Stick posts ==================================
+.posts-stick{
+    .item-list > ul{
+       > li{
+          display: block;
+          float: right;
+          overflow: hidden;
+          width: 50%;
+          clear: right;
+          @media(max-width: $screen-sm-max){
+            width: 100%;
+            clear: both;
+          }
+          .post-title, .post-meta, .post-meta-wrap{
+            clear: both;
+          }
+          &:last-child{
+            margin-bottom: 0!important;
+          }
+          &:after {
+             visibility: hidden;
+             display: block;
+             content: ".";
+             clear: right;
+             height: 0;
+          }
+          &:not(:first-child){
+            margin-bottom: 20px; 
+            padding-left: 15px;
+            .post-image{
+              display: inline-block;
+              @include size(100px, auto);
+              float: left;
+            }
+            .post-content{
+                padding-left: 110px;
+             }
+            .post-title, .post-meta{
+              clear: none!important;
+            }
+            .post-meta{
+              float: left;
+              width: 100%;
+              margin: 2px 0 0;
+              .post-author{
+                display: none;
+              }
+            }
+            .post-body{
+              display: none;
+            }
+            .post-title{
+              padding: 0;
+              a{
+                display: block;
+                font-size: 15px;
+              }
+            }
+          }
+          &:first-child{
+             border-bottom: 0 none;
+             display: block;
+             float: left;
+             padding-right: 15px!important;
+             width: 50%;
+             clear: none;
+             padding-bottom: 0;
+             margin-bottom: 0;
+              @media(max-width: $screen-sm-max){
+                width: 100%;
+                clear: both;
+                margin-bottom: 20px;
+              }
+              .post-title{
+                padding: 12px 0;
+                a{
+                  font-size: 20px;
+                  line-height: 28px;
+                }
+              }
+              .post-meta{
+                margin: 0 0 10px;
+              }
+              &:after {
+                content: none;
+              }
+          }
+       }
+    }
+}
+
+.posts-stick-list{
+    .item-list > ul{
+       > li{
+          display: block;
+          overflow: hidden;
+          width: 100%;
+          clear: both;
+          &:not(:first-child){
+            margin-bottom: 20px;
+             .post-image{
+                @include size(100px, auto);
+                float: left;
+                margin: 0;
+             }
+             .post-content{
+                padding-left: 115px;
+             }
+             .post-body{
+              display: none;
+             }
+             .post-meta{
+              float: left;
+              width: 100%;
+              margin-bottom: 0;
+             }
+             .post-title{
+                padding: 0;
+                a{
+                  display: block;
+                  font-size: 15px;
+                }
+             }
+          }
+          &:first-child{
+             border-bottom: 0 none;
+             display: block;
+             width: 100%;
+             clear: none;
+             padding-bottom: 0;
+             margin-bottom: 20px;
+             .post-title{
+              margin: 15px 0 5px;
+              a{
+                font-size: 18px;
+                line-height: 24px;
+                @media(max-width: $screen-xs-max){
+                  font-size: 16px;
+                }
+              }
+             }
+          }
+          &:last-child{
+            margin-bottom: 0!important;
+          }
+       }
+    }
+}  
+
+.posts-stick-large{
+    .item-list > ul{
+       > li{
+          display: block;
+          float: right;
+          overflow: hidden;
+          clear: right;
+          color: $white;
+          a{
+            color: $white;
+          }
+          @media(max-width: $screen-sm-max){
+            width: 100%;
+            clear: both;
+          }
+          .post-title, .post-meta{
+            clear: both;
+          }
+          &:last-child{
+            margin-bottom: 0!important;
+          }
+          &:after {
+             visibility: hidden;
+             display: block;
+             content: ".";
+             clear: right;
+             height: 0;
+          }
+          .post-block{
+            position: relative;
+            &:after{
+              content: "";
+              background: rgba(0, 0, 0, 0.4);
+              @include size(100%, 100%);
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 1;
+            }
+            .post-image{
+              width: 100%;
+              margin: 0;
+            }
+            .post-content{
+              position: absolute;
+              bottom: 20px;
+              left: 0;
+              padding: 20px;
+              z-index: 11;
+            }
+            .post-meta{
+              color: $white;
+            }
+            .post-meta-top{
+              border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+              position: relative;
+              .post-categories{
+                display: inline-block;
+                margin-bottom: 0;
+                &:after{
+                  content: "";
+                  position: absolute;
+                  background: $theme-color;
+                  @include size(100%, 5px);
+                  bottom: -5px;
+                  left: 0;
+                  z-index: 1;
+                }
+              }  
+              a{
+                color: $white;
+                font-weight: 700;
+              }
+            }  
+            .post-title{
+              a{
+                color: $white;
+              }
+            }
+          }
+          &:not(:first-child){
+            padding-left: 25px;
+            width: 33.33333%;
+            @media(max-width: $screen-sm-max){
+              width: 50%;
+              float: left;
+              clear: none;
+              padding: 0;
+            }
+            @media(max-width: $screen-xs-max){
+              width: 100%;
+              clear: both;
+              margin-bottom: 20px;
+              padding: 0;
+            }
+            
+            .post-title, .post-meta{
+              clear: none!important;
+            }
+            
+          }
+          &:first-child{
+            border-bottom: 0 none;
+            display: block;
+            float: left;
+            padding-right: 5px;
+            width: 66.66667%;
+            clear: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            @media(max-width: $screen-sm-max){
+              width: 100%;
+              clear: both;
+              margin-bottom: 20px;
+              padding-right: 0;
+            }
+            &:after {
+              content: none;
+            }
+          }
+       }
+    }
+}
+
+.posts-hero{
+  .post-block{
+    position: relative;
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .post-image{
+      margin: 0;
+    }
+    ul{
+      margin: 0;
+    }
+    .post-content{
+      width: 100%;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 9;
+    }
+    .post-title{
+      a{
+        color: $white;
+        font-weight: 400;
+        font-size: 14px;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+    } 
+    .post-meta{
+      color: $white;
+      a{
+        color: $white;
+      }
+    }
+  }
+}
+
+//=============== posts-big ==========================
+.posts-big{
+  .post-image{
+    .post-categories{
+      padding: 10px 18px;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      z-index: 11;
+      a{
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $white;
+        display: block;
+      }
+    }
+  }
+  .post-meta-top{
+    .post-categories{
+      margin: 0;
+    }
+  }
+  .post-title{
+    margin-top: 5px;
+    a{
+      font-size: 24px;
+      line-height: 36px;
+      display: block;
+      font-weight: 800;
+    }
+  }
+  .link a{
+    color: #999999;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 15px;
+    display: inline-block;
+  }
+}
+
+.posts-grid{
+  .post-block{
+    margin-bottom: 30px;
+    .post-content{
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: -30px;
+      padding: 5px 20px 0;
+      position: relative;
+      z-index: 11;
+      background: $white;
+    }
+  }
+  &.v2{
+    .post-content{
+      margin: 0!important;
+      padding: 0!important;
+    }
+  }
+}
+
+.posts-grid-hero{
+  .init-carousel-owl{
+    margin-left: 0;
+    margin-right: 0;
+    .owl-item > .item{
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .post-block{
+    position: relative;
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      @include opacity(0);
+      @include transition(all 0.35s);
+    }
+    .post-image{
+      margin: 0;
+    }
+    ul{
+      margin: 0;
+    }
+    .post-content{
+      width: 100%;
+      padding: 30px 75px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 9;
+      @include transition(all 0.35s);
+      @include opacity(0);
+      @include scale(0);
+      @media(max-width: $screen-sm-max){
+        padding: 15px 20px;
+      }
+    }
+    .post-title{
+      padding: 0;
+      a{
+        font-size: 16px;
+        line-height: 26px;
+        color: $white;
+        font-weight: 600;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+    }
+    .post-meta{
+      &.top{
+        border-bottom: 5px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        .post-categories{
+          display: inline-block;
+          margin: 0;
+          padding-bottom: 10px;
+          &:before{
+            content: "";
+            position: absolute;
+            background: $theme-color;
+            @include size(100%, 5px);
+            bottom: -5px;
+            left: 0;
+            z-index: 1;
+          }
+        }  
+        a{
+          color: $white;
+          font-weight: 700;
+        }
+      }  
+    }
+    &:hover{
+      &:after{
+        @include opacity(1);
+      }
+      .post-content{
+        @include opacity(1);
+        @include scale(1);
+      }
+    }  
+  }
+}
+
+.slidershow-v1{
+  padding: 15px;
+  background: $white!important;
+  .item{
+    .post-large{
+      width: 66.66667%;
+      float: left;
+      @media(max-width: $screen-xs-max){
+        width: 100%;
+      }
+    }  
+    .posts-small{
+      width: 33.33333%;
+      float: left;
+      @media(max-width: $screen-xs-max){
+        width: 100%;
+        .post-small-item{
+          width: 50%;
+          float: left;
+          .post-title{
+            display: none;
+          }
+        }
+      }    
+      .post-small-item{
+        .post-body{
+          display: none;
+        }
+        .post-title{
+          padding-bottom: 0;
+          a{
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+    @media(max-width: $screen-sm-max){
+      .post-meta{
+        display: none;
+      }
+    }
+    @media(max-width: $screen-xs-max){
+      .post-categories{
+        display: none;
+      }
+      .post-title a{
+        font-size: 13px!important;
+        line-height: 18px!important;
+      }
+    }
+  }
+}
+
+//--------------------- Display post stick --------------------------
+.post-stick-v2{
+  .item-list{ 
+    margin-left: -15px;
+    margin-right: -15px;
+    > ul{
+      > li{
+        display: block;
+        width: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+        .post-block{
+          position: relative;
+        }
+        &:not(:first-child){
+          width: 50%;
+          float: left;
+          margin-bottom: 20px;
+          @media(max-width: $screen-sm-max){
+            width: 100%;
+          }
+          &:nth-of-type(2n+2){
+            @include clearfix();
+            clear: both;
+          }
+          .post-image{
+            width: 100px;
+            float: left;
+            margin-bottom: 0;
+            img{
+              width: 100%;
+              height: auto;
+            }
+          }
+          .post-content{
+            padding-left: 110px;
+            display: block;
+            .post-title{
+              padding-top: 0;
+              a{
+                font-size: 15px;
+              }
+            }
+          }
+          .post-body{
+            display: none;
+          }
+        }
+
+        &:first-child{
+          border-bottom: 0 none;
+          display: block;
+          width: 100%;
+          clear: both;
+          .post-image{
+            width: 50%;
+            float: left;
+            @media(max-width: $screen-xs-max){
+              width: 100%;
+            }
+          }
+          .post-content{
+            width: 50%;
+            float: left;
+            padding-left: 20px;
+            @media(max-width: $screen-xs-max){
+              width: 100%;
+              margin-top: 15px;
+            }
+          }
+          .post-title{
+            padding: 12px 0;
+            a{
+              font-size: 20px;
+              line-height: 28px;
+            }
+          }
+          .post-meta{
+            margin: 0 0 10px;
+          }
+          &:after {
+            content: none;
+          }
+        }
+        &:last-child{
+          margin-bottom: 0!important;
+        }
+        &:nth-last-child(2){
+          margin-bottom: 0!important;
+        }
+      }
+    }  
+  }
+}
+
+.portfolio-filter{
+  margin-bottom: 30px;
+  text-align: left;
+  ul.nav-tabs{
+    padding: 0!important;
+    > li{
+      margin: 0;
+      > a{
+        padding: 5px 15px;
+        text-transform: capitalize;
+        background: none;
+        font-weight: 400;
+        color: $black;
+        @include transition(all 0.35s);
+        &.active{
+          background: $theme-color;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.gva-portfolio-items{
+  .post-block{
+    margin-bottom: 20px;
+    min-height: 72px;
+  }
+}

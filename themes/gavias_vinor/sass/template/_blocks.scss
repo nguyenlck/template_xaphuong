@@ -1,0 +1,440 @@
+// Block Layout styles
+//----------------------------
+.block {
+  margin-bottom: 30px;
+  overflow: hidden;
+  .block-title {
+    background: none;
+	  position: relative;
+    margin: 0 0 30px;
+    padding: 0 0 0;
+    border-bottom: 1px solid $border-color;
+    @include box-shadow(2px 2px 6px rgba(0, 0, 0, 0.1));
+    > span{
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      position: relative;
+      letter-spacing: 2px;
+      color: $theme-color;
+      padding: 0 0 13px;
+      z-index: 9;
+      &:before{ 
+        content: "";
+        @include box-shadow(2px 2px 6px $theme-color);
+        @include opacity(0.5);
+        position: absolute;
+        @include size(100%, 1px);
+        background: $theme-color;
+        left: 0;
+        bottom: -1px;  
+        z-index: 1;
+      }
+    }
+  }
+
+  &.block-system-main-block{
+    margin-bottom: 0;
+  }
+
+  &.block-system-breadcrumb-block{
+    overflow: visible;
+    margin-bottom: 20px;
+  }
+
+  &.block-none, &.no-padding{
+    background: none!important;
+    padding: 0!important;
+    .block-content{
+      padding: 0!important;
+    }
+  }
+
+  &.no-title{
+    margin-top: 0;
+	  border: none;
+  	&:before{
+  		content: none;
+  	}
+  }
+  &.style-higlight{
+    background: #34495E;
+    padding: 20px;
+    color: $white;
+    .block-title {
+  		border: none;
+      padding: none;
+      margin-bottom: 10px;
+      @include box-shadow(none!important);
+  		span{
+        color: $white;
+        &:before{
+  			   content: none;
+  		  }
+      }
+      h2{
+        margin: 0;
+        padding: 0;
+        border: none;
+        span{
+          padding: 10px;
+          background: #4E6984;
+          color: $white;
+        }
+      }
+    }
+    .post-title a{
+      color: $white;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .post-body{
+      color: $white;
+    }
+    .post-meta{
+      color: #ccc;
+      a{
+        color: #ccc;
+      }
+    }
+    .post-content{
+      background: none!important;
+    }
+    .post-categories a{
+      color: $white;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    .more-link a{
+      color: $white;
+      padding: 0 15px 15px;
+      display: block;
+      &:hover{
+        color: $theme-color;
+      }
+    }
+  }
+  &#block-system-main{
+    padding-top: 10px;
+  }
+  &.no-title{
+    border: none;
+    > .block-title, > div > .block-title {
+      padding: 0;
+      margin: 0;
+	    border: none;
+  		&:before{
+  			content: none;
+  		}
+    }
+  }
+  &.block-simplenews{
+    border: 1px solid $border-color;
+    padding: 30px;
+    text-align: center;
+    .block-title{
+      border-bottom: none;
+      margin-bottom: 0;
+      @include box-shadow(none);
+      span{
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0;
+        color: #111111;
+        &:before{
+          display: none;
+        }
+      }
+    }
+    form{
+      position: relative;
+      .description{
+        display: none;
+      }
+      input#edit-subscribe{
+        margin-top: 8px;
+        background: none;
+        border: none;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 800;
+        width: 100%;
+        padding: 10px 0;
+        background: $theme-color;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        @include transition(all 0.35s);
+        bottom: 10px;
+        right: 15px;
+        z-index: 11;
+        &:hover{
+          background: $black;
+          color: $white;
+        }
+      }
+      #edit-message{
+        margin-bottom: 10px;
+      }
+      #edit-mail-wrapper{
+        label{
+          display: none;
+        }
+        input.form-email{
+          padding: 0 10px;
+          width: 100%;
+          background: transparent;
+          max-width: 370px;
+          line-height: 36px;
+          border: 1px solid $border-color; 
+        }
+      }
+    }  
+  }
+  &.block-blocktabs{
+    position: relative;
+    .ui-widget{
+      font-size: $font-size-base;
+    }
+    .ui-tabs-nav{
+      padding: 0;
+      border: none;
+      background: none!important;
+      display: inline-block;
+      float: right;
+      position: absolute;
+      right: 0;
+      top: -60px;
+      z-index: 99;
+      @media(max-width: $screen-xs-max){
+        top: -55px;
+      }
+      > li{
+        background: none;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        position: relative;
+        > a{
+          font-size: 14px;
+          text-transform: none;
+          font-weight: 700;
+          padding: 0;
+          padding-right: 20px;
+          @media(max-width: $screen-xs-max){
+            padding-right: 10px;
+          }
+        }
+        &:last-child{
+          > a{
+            padding-right: 0;
+          }
+        }
+        &.ui-tabs-active{
+           > a{
+            color: $theme-color;
+           }
+        }
+      }
+    }
+    .blocktabs{
+      border: none;
+      padding: 0;
+      @include border-radius(0);
+      .ui-tabs-panel{
+        padding: 0!important;
+      }
+    }
+    .block{
+      margin-bottom: 0!important;
+    }
+  }
+}
+.help{
+  .control-panel{
+    display: none;
+  }
+}
+
+@media(min-width: $screen-sm-max){
+  body.logged-in.node--type-page-full, body.logged-in.node--type-page{
+    .help{
+      position: fixed;
+      top: 300px;
+      left: 0;
+      @include translateX(-100%);
+      max-width: 60%;
+      max-height: 50%;
+      z-index: 99;
+      width: auto;
+      min-width: 164px;
+      background: $white;
+      @include box-shadow(0px 0px 10px 3px rgba(0, 0, 0, 0.1));
+      border: 1px solid $border-color;
+      @include transition(all 0.35s);
+      .container{
+        width: auto!important;
+      }
+      &.show{
+        @include translateX(0);
+      }
+      .control-panel{
+        display: block;
+        border: 1px solid $border-color;
+        @include size(30px, 30px);
+        line-height: 30px;
+        background: $white;
+        text-align: center;
+        @include box-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
+        position: absolute;
+        top: 20px;
+        left: 100%;
+        margin-top: -15px;
+        z-index: 11;
+        &:hover{
+          cursor: pointer;
+          color: $theme-color;
+        }
+      }
+      .drupal-tabs{
+        border: none;
+        width: 100%;
+        > li{
+          float: none;
+          a{
+            font-size: 12px;
+          }
+        }
+      }
+      .messages__wrapper{
+        padding: 10px!important;
+        max-height: 400px;
+        overflow: scroll;
+      }
+    }
+  }
+}
+
+.block{
+  &.site-branding{
+    margin-bottom: 0;
+  }
+}
+
+.region-main-menu{
+  .block{
+    background: $nocolor;
+    .block-content{
+      padding: 0;
+    }
+  }
+}
+
+.highlighted{
+  .block{
+    .block-title{
+      color: $white;
+      border: none;
+      margin-bottom: 10px;
+      @include box-shadow(none);
+      span{
+        color: $white;
+        font-size: 16px;
+        &:before{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+//--------- Block recent comment ---------------------
+.recent-comment-block{
+  .views-field-picture{
+    @include rtl-margin-right(10px);
+  }
+  .views-field-title{
+    margin-top: -4px;
+    a{
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .views-field-name{
+    color: #a4a4a4;
+    a{
+      color: #a4a4a4;
+    }
+  }
+}
+
+.list-tags{
+  .item-list{
+    ul > li{
+      float: left;
+      border: 1px solid $border-color;
+      @include border-radius(3px);
+      display: inline-block;
+      width: auto!important;
+      padding: 0!important;
+      margin: 0 10px 10px 0!important;
+      a{
+        padding: 2px 10px;
+        display: block;
+        @include transition(all 0.35s);
+      }
+      &:hover{
+        background: $theme-color;
+        a{
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.light-style{
+  .list-tags{
+    ul > li{
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.contact-info{
+  line-height: 28px;
+}
+
+.contact-info-page{
+  color: #999999;
+  line-height: 28px;
+}
+
+nav.breadcrumb{
+  margin-bottom: 0!important;
+  background: none;
+  color: #999999;
+  ol{
+    @include clearfix();
+    list-style: none;
+    margin-bottom: 0!important; 
+    padding: 0;
+    > li{
+      float: left;
+      font-size: 13px;
+      a{
+        color: #999999;
+        &:hover{
+          color: $theme-color;
+        }
+      }
+      span{
+        padding: 0 2px 0px 0px;
+      }
+    }
+  }
+}

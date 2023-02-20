@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Gavias's theme implementation to display a single Drupal page.
+ */
+#}
+
+<div class="content-main-inner">
+	<div class="row">
+		
+		{% set cl_main = 'col-md-12 col-xs-12' %}
+		
+		<div id="page-main-content" class="main-content {{ cl_main }}">
+
+			<div class="main-content-inner">
+				
+				{% if page.content_top %}
+					<div class="content-top">
+						{{ page.content_top }}
+					</div>
+				{% endif %}
+
+				{% if page.content %}
+					<div class="content-main">
+						{{ page.content }}
+					</div>
+				{% endif %}
+
+				{% if page.content_bottom %}
+					<div class="content-bottom">
+						{{ page.content_bottom }}
+					</div>
+				{% endif %}
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+

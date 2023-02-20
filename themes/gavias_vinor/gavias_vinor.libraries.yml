@@ -1,0 +1,156 @@
+global-styling:
+  version: VERSION
+  header: true
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Roboto:400,500,700: { type: external }
+      css/font-awesome.css: {}
+      vendor/owl-carousel/assets/owl.carousel.min.css: {}
+      vendor/owl-carousel/assets/owl.theme.default.min.css: {}
+  js:
+    vendor/jquery-migrate.min.js: {}
+    js/bootstrap.js: {}
+    js/imagesloader.min.js: {}
+    vendor/jquery.easing.js: {}
+    vendor/owl-carousel/owl.carousel.js: {}
+    vendor/perfect-scrollbar.jquery.min.js: {}
+    js/sidebar-sticky.js: {}
+    vendor/waypoint.js: {}
+    vendor/masonry.pkgd.min.js: {}
+    vendor/isotope.pkgd.min.js: {}
+    vendor/jpreloader.min.js: {}
+    vendor/aos.js: {}
+    js/main.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+gavias_vinor.skin.default:
+  version: VERSION
+  css:
+    theme: 
+      css/template.css: {}
+      css/bootstrap.css: {}
+
+gavias_vinor.skin.blue:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/blue/template.css: {}
+      css/skins/blue/bootstrap.css: {}
+
+gavias_vinor.skin.brown:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/brown/template.css: {}
+      css/skins/brown/bootstrap.css: {}
+
+gavias_vinor.skin.green:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/green/template.css: {}
+      css/skins/green/bootstrap.css: {}
+
+gavias_vinor.skin.lilac:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/lilac/template.css: {}
+      css/skins/lilac/bootstrap.css: {}
+
+gavias_vinor.skin.lime_green:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/lime_green/template.css: {}
+      css/skins/lime_green/bootstrap.css: {}
+
+gavias_vinor.skin.orange:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/orange/template.css: {}
+      css/skins/orange/bootstrap.css: {}
+
+gavias_vinor.skin.pink:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/pink/template.css: {}
+      css/skins/pink/bootstrap.css: {}
+
+gavias_vinor.skin.purple:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/purple/template.css: {}
+      css/skins/purple/bootstrap.css: {}
+
+gavias_vinor.skin.red:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/red/template.css: {}
+      css/skins/red/bootstrap.css: {}
+
+gavias_vinor.skin.turquoise:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/turquoise/template.css: {}
+      css/skins/turquoise/bootstrap.css: {}
+
+gavias_vinor.skin.turquoise2:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/turquoise2/template.css: {}
+      css/skins/turquoise2/bootstrap.css: {}
+
+gavias_vinor.skin.violet_red:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/violet_red/template.css: {}
+      css/skins/violet_red/bootstrap.css: {}
+
+gavias_vinor.skin.violet_red2:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/violet_red2/template.css: {}
+      css/skins/violet_red2/bootstrap.css: {}
+
+gavias_vinor.skin.yellow:
+  version: VERSION
+  css:
+    theme: 
+      css/skins/yellow/template.css: {}
+      css/skins/yellow/bootstrap.css: {}
+
+gavias_vinor_admin:
+  version: VERSION
+  css: 
+    theme: 
+      css/theme-settings.css: {}
+      vendor/colorpicker/css/colorpicker.css: {}
+      vendor/codemirror/lib/codemirror.css: {}
+      vendor/codemirror/addon/hint/show-hint.css: {}
+  js:
+      vendor/jquery-migrate.min.js: {}
+      vendor/colorpicker/js/colorpicker.js: {}
+      vendor/codemirror/lib/codemirror.js: {cope: footer}
+      vendor/codemirror/addon/hint/show-hint.js: {cope: footer}
+      vendor/codemirror/mode/css/css.js: {cope: footer}
+      js/customize.js: {}
+
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}
+

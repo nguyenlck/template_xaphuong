@@ -1,0 +1,110 @@
+{#
+/**
+ * @file
+ * Gavias's theme implementation to display a single Drupal page.
+ */
+#}
+{% if page.fw_promotion %}
+	<div class="promotion-fw area">
+		<div class="content-inner">
+		 	{{ page.fw_promotion }}
+		</div> 	
+	</div>
+{% endif %}	
+
+{% if page.promotion %}
+	<div class="promotion area">
+		<div class="container">
+			<div class="content-inner">
+				{{ page.promotion }}
+			</div>
+		</div>		
+	</div>
+{% endif %}	
+
+{% if page.help %}
+	<div class="help show">
+		<div class="container">
+			<div class="control-panel"><i class="fa fa-cogs"></i></div>
+			<div class="content-inner">
+				{{ page.help }}
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% if page.fw_before_content %}
+	<div class="fw-before-content area">
+		{{ page.fw_before_content }}
+	</div>
+{% endif %}
+
+<div class="clearfix"></div>
+{% if page.before_content %}
+	<div class="before_content area">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					{{ page.before_content }}
+					</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
+<div class="clearfix"></div>
+
+<div id="content" class="content content-full">
+	<div class="container-full">
+		<div class="content-main-inner">
+			<div class="row">
+
+				<div id="page-main-content" class="main-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<div class="main-content-inner">
+						
+						{% if page.content_top %}
+							<div class="content-top">
+								{{ page.content_top }}
+							</div>
+						{% endif %}
+
+						{% if page.content %}
+							<div class="content-main">
+								{{ page.content }}
+							</div>
+						{% endif %}
+
+						{% if page.content_bottom %}
+							<div class="content-bottom">
+								{{ page.content_bottom }}
+							</div>
+						{% endif %}
+					</div>
+
+				</div>
+
+			</div>	
+			
+		</div>
+	</div>
+</div>
+
+{% if page.highlighted %}
+	<div class="highlighted area">
+		<div class="container">
+			<div class="content-inner">
+				{{ page.highlighted }}
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% if page.after_content %}
+	<div class="area after_content">
+		<div class="container-fw">
+       	<div class="content-inner">
+				 {{ page.after_content }}
+       	</div>
+  		</div>
+	</div>
+{% endif %}

@@ -1,0 +1,42 @@
+{% if page.breadcrumbs %}
+  <div class="breadcrumbs">
+    {{ page.breadcrumbs }}  
+  </div>
+{% endif %}
+
+{% if page.promotion %}
+  <div class="promotion area">
+    <div class="container">
+      <div class="content-inner">
+        {{ page.promotion }}
+      </div>
+    </div>    
+  </div>
+{% endif %} 
+
+{% if page.help %}
+  <div class="help show">
+    <div class="container">
+      <div class="control-panel"><i class="fa fa-cogs"></i></div>
+      <div class="content-inner">
+        {{ page.help }}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="clearfix"></div>
+
+{% if page.before_content %}
+  <div class="before_content area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          {{ page.before_content }}
+          </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="clearfix"></div>

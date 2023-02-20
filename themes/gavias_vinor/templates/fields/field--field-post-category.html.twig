@@ -1,0 +1,3 @@
+{% for item in items %}
+  <div class="post-categories {{ item.content['#options'].entity.field_taxonomy_color.value }}" {{ attributes }}>{{ item.content }}</div>
+{% endfor %}

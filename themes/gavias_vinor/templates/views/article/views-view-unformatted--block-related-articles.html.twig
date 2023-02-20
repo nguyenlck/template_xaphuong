@@ -1,0 +1,29 @@
+<div>
+   {% if title %}
+      {{ title }}
+   {% endif %}
+   <div class="category-2columns">
+      {% set i = 0 %}
+      {% for row in rows %}
+         {% set class_row = "" %}
+         {% set i = i + 1 %}
+         
+         {% if i == 1 %}
+            {% set class_row = "row-first" %}
+         {% else %}
+            {% set class_row = "row-second" %}
+         {% endif %}  
+
+         {% if i % 2 == 1 %}
+            <div class="row {{class_row}}">
+         {% endif %}   
+            <div class="col-sm-6 col-xs-12">
+               {{ row.content }}
+            </div>
+         {% if i % 2 == 0 or i == rows|length %}
+            </div>
+         {% endif %}   
+
+      {% endfor %}   
+   </div>
+</div>

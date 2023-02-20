@@ -1,0 +1,202 @@
+@import "vars/_theme_variables";
+
+@import "mixins/mixins";
+@import "mixins/template";
+@import "rtl/rtl"; 
+
+.nav-tabs, .block-builder-main ul , .topbar ul , ul.contact-info, ul.menu{
+   list-style: none;
+   padding-left: 0;
+}
+
+.article-detail p{
+   margin-bottom: 10px;
+}
+/*************** Pricing Tables ***************/
+.pricing-table {
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+  top: 0;
+  @include transition(all 0.35s);
+  padding: 65px 50px 50px;
+  @include transition(all 0.35s);
+  @media(max-width: $screen-sm-max){
+    padding: 30px;
+  }
+  border: 1px solid $border-color;
+  padding: 0!important;
+  ul li{ 
+    list-style: none;
+  }
+  .plan-name {
+    @include transition(all 0.35s);
+    padding: 10px 0;
+    font-size: 16px;
+    color: $black;
+    font-weight: 700;
+    letter-spacing: 2px;  
+    font-family: $font-family-base;
+    h3 {
+      font-weight: 700;
+      color: $black;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .content-wrap{
+    .plan-price {
+      padding: 0 0 25px;
+      background: $theme-color;
+      .price-value {
+        padding: 20px 0 0;
+        span{
+          font-size: 48px;
+          font-weight: 700;
+          font-family: $font-second;
+          display: inline-block;
+          position: relative;
+          color: $white;
+          line-height: 1;
+        }
+        div.value {
+          font-size: 48px;
+          font-weight: 700;
+          font-family: $font-second;
+          display: inline-block;
+          color: $white;
+          line-height: 1;
+        }
+      }
+      .interval {
+        line-height: 28px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: $font-second;
+        color: $white;
+      }
+    }
+  }  
+  .plan-list{
+    padding: 0;
+    ul{
+      margin: 0!important;
+      li {
+        padding: 12px 0;
+        font-size: 14px;
+        list-style: none;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+  }  
+  .plan-signup {
+    padding: 20px 0;
+    a {
+      color: $black;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: $font-second;
+      &:hover{
+        color: $theme-color;
+      }
+    }
+  }
+  &:hover{
+    @include box-shadow(0 1px 15px 0 rgba(0, 0, 0, 0.08));
+  }
+  &.highlight-plan {
+    @include box-shadow(0 1px 15px 0 rgba(0, 0, 0, 0.08));
+  }
+}
+
+#user-register-form{
+  padding: 20px 0;
+  .form-wrapper{
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $border-color;
+    &#edit-actions{
+      border-bottom: none;
+    }
+    label{
+      width: 100%;
+    }
+  }
+  .form-item{
+    margin-bottom: 15px;
+  }
+}
+
+input[type*='submit']{
+  font-size: 13px;  
+  text-transform: uppercase;
+  font-family: $font-second;
+  background: $theme-color;
+  color: $white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 8px 15px;
+  @include border-radius(5px);
+  position: relative;
+  display: inline-block;
+  @include transition(all 0.35s);
+  border: 1px solid transparent;
+  @include box-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+  &:hover{
+    background: $white;
+    color: $black;
+    border-color: $theme-color;
+  }
+}
+
+body.path-user{
+  .block-local-tasks-block{
+    text-align: center;
+    margin: 15px auto 0;
+    ul.drupal-tabs{
+      display: inline-block;
+      margin: auto;
+      min-width: 800px;
+    }
+  }
+}
+#user-login-form{
+  max-width: 800px;
+  margin: 0 auto;
+  @include box-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+  padding: 30px;
+  margin-bottom: 50px;
+  margin-top: 30px; 
+  @include clearfix();
+}
+summary{
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $theme-color;
+}
+
+@media(max-width: 992px){
+  .post-stick-v2 .item-list > ul > li:not(:first-child) {
+      margin-bottom: 20px!important;
+  }
+  
+}
+
+@media(max-width: 768px){
+  .category-2columns .row-first > div{
+    &:first-child{
+      margin-bottom: 20px;
+    }
+  }
+  .category-2columns .row-second > div{
+    margin-bottom: 20px!important;
+    &:last-child{
+      margin-bottom: 0!important;
+    }
+  }
+}
